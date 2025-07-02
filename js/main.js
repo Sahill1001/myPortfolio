@@ -194,32 +194,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Enhanced Dark mode toggle with improved interaction
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        const themeIcon = themeToggle.querySelector('i');
-        
-        // Function to set theme
+    const themeToggles = document.querySelectorAll('.theme-toggle, .nav-theme-toggle');
+    if (themeToggles.length) {
         function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-                // Reinitialize backgrounds for dark mode
-                initVantaBackground();
-                initParticles();
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-                // Reinitialize backgrounds for light mode
-                initVantaBackground();
-                initParticles();
-            }
+            document.documentElement.setAttribute('data-theme', theme);
+            themeToggles.forEach(toggle => {
+                const icon = toggle.querySelector('i');
+                if (icon) {
+                    if (theme === 'dark') {
+                        icon.classList.remove('fa-moon');
+                        icon.classList.add('fa-sun');
+                    } else {
+                        icon.classList.remove('fa-sun');
+                        icon.classList.add('fa-moon');
+                    }
+                }
+            });
+            // Reinitialize backgrounds for theme
+            if (typeof initVantaBackground === 'function') initVantaBackground();
+            if (typeof initParticles === 'function') initParticles();
         }
-        
-        // Check for saved theme preference or use device preference
+
         const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
         const savedTheme = localStorage.getItem('theme');
-        
-        // Apply initial theme
         if (savedTheme) {
             setTheme(savedTheme);
         } else if (prefersDarkScheme.matches) {
@@ -229,24 +226,18 @@ document.addEventListener('DOMContentLoaded', function() {
             setTheme('light');
             localStorage.setItem('theme', 'light');
         }
-        
-        // Add event listener for theme toggle with animation
-        themeToggle.addEventListener('click', () => {
-            // Add rotation animation
-            themeToggle.style.transform = 'rotate(360deg)';
-            
-            setTimeout(() => {
-                themeToggle.style.transform = '';
-            }, 300);
-            
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            setTheme(newTheme);
-            localStorage.setItem('theme', newTheme);
+
+        themeToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                toggle.style.transform = 'rotate(360deg)';
+                setTimeout(() => { toggle.style.transform = ''; }, 300);
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
         });
-        
-        // Listen for system theme changes
+
         prefersDarkScheme.addEventListener('change', (e) => {
             if (!localStorage.getItem('theme')) {
                 const newTheme = e.matches ? 'dark' : 'light';
