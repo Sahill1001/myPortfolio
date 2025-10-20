@@ -79,13 +79,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create code typing animation
     function createCodeElement() {
         const codeText = [
-            "function init() {\n  const app = new App();\n  app.start();\n}",
-            "const data = await api.getData();\nrenderApp(data);",
-            "import React from 'react';\n\nconst App = () => {\n  return <div>...</div>;\n}",
-            "class User {\n  constructor() {\n    this.name = 'Sahil';\n  }\n}",
-            "const result = data.filter(item => item.id > 10);",
-            "public class Main {\n  public static void main(String[] args) {\n    System.out.println(\"Hello Java!\");\n  }\n}",
-            "import java.util.*;\n\npublic class DSA {\n  List<Integer> sort(List<Integer> list) {\n    Collections.sort(list);\n    return list;\n  }\n}"
+            "@SpringBootApplication\npublic class Application {\n  public static void main(String[] args) {\n    SpringApplication.run(Application.class, args);\n  }\n}",
+            "@RestController\n@RequestMapping(\"/api\")\npublic class UserController {\n  @Autowired\n  private UserService userService;\n}",
+            "@Entity\n@Table(name = \"users\")\npublic class User {\n  @Id\n  @GeneratedValue(strategy = GenerationType.IDENTITY)\n  private Long id;\n}",
+            "@Service\npublic class UserService {\n  @Autowired\n  private UserRepository userRepository;\n}",
+            "@GetMapping(\"/users\")\npublic List<User> getAllUsers() {\n  return userService.findAll();\n}",
+            "@PostMapping(\"/users\")\npublic ResponseEntity<User> createUser(@RequestBody User user) {\n  return ResponseEntity.ok(userService.save(user));\n}",
+            "public interface UserRepository extends JpaRepository<User, Long> {\n  List<User> findByEmail(String email);\n}"
         ];
         
         // Rest of the animation logic can be handled by CSS

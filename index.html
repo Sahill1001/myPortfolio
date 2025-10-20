@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahilkumar Prasad - Software Developer</title>
+    <title>Sahilkumar Prasad - Java Backend Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
@@ -80,12 +80,11 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 data-aos="fade-up"><span>Sahilkumar Prasad</span></h1>
-                    <p data-aos="fade-up" data-aos-delay="200">Full Stack Software Developer with expertise in JavaScript, Java, Python and PHP ecosystems.</p>
+                    <p data-aos="fade-up" data-aos-delay="200">Java Backend Developer with 2.5 years building high-scale, low-latency systems using Spring Boot, Microservices, and cloud. Strong in DSA and System Design for product-grade reliability.</p>
                     <div class="contact-icons">
                         <a href="mailto:prasadsahil06@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                         <a href="https://www.linkedin.com/in/sahilkumar-prasad-74abba272/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/Sahill1001" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.instagram.com/sahill_1001" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="tel:+918451968851" title="Phone"><i class="fas fa-phone"></i></a>
                     </div>
                     <div class="resume-btn-container">
@@ -97,7 +96,7 @@
                         <div class="avatar-frame"></div>
                         <div id="lottie-container" class="lottie-container"></div>
                         <div class="typing-effect">
-                            <div class="typing-code">public class Main {<br>  public static void main(String[] args) {<br>    System.out.println("Hello Java!");<br>  }<br>}</div>
+                            <div class="typing-code">@RestController<br>@RequestMapping("/api")<br>public class UserController {<br>  @Autowired<br>  private UserService userService;<br>}</div>
                         </div>
                     </div>
                 </div>
@@ -105,10 +104,10 @@
         </div>
 
         <!-- Code streams -->
-        <div class="code-stream" style="top: 20%; left: 10%; animation-delay: 0s;">const user = new Developer();<br>user.skills.add('JavaScript');</div>
-        <div class="code-stream" style="top: 50%; left: 15%; animation-delay: 2s;">function createApp() {<br>  return new Application();</div>
-        <div class="code-stream" style="top: 40%; left: 75%; animation-delay: 4s;">public class JavaDeveloper {<br>  public static void main(String[] args) {...}}</div>
-        <div class="code-stream" style="top: 70%; left: 60%; animation-delay: 3s;">List&lt;String&gt; skills = Arrays.asList("Java", "DSA");<br>skills.forEach(System.out::println);</div>
+        <div class="code-stream" style="top: 20%; left: 10%; animation-delay: 0s;">@SpringBootApplication<br>public class Application {<br>  public static void main(String[] args) {<br>    SpringApplication.run(Application.class, args);<br>  }<br>}</div>
+        <div class="code-stream" style="top: 50%; left: 15%; animation-delay: 2s;">@Service<br>public class UserService {<br>  @Autowired<br>  private UserRepository userRepository;<br>}</div>
+        <div class="code-stream" style="top: 40%; left: 75%; animation-delay: 4s;">@Entity<br>@Table(name = "users")<br>public class User {<br>  @Id<br>  @GeneratedValue(strategy = GenerationType.IDENTITY)<br>  private Long id;<br>}</div>
+        <div class="code-stream" style="top: 70%; left: 60%; animation-delay: 3s;">@RestController<br>@RequestMapping("/api/users")<br>public class UserController {<br>  @GetMapping<br>  public List&lt;User&gt; getAllUsers() {<br>    return userService.findAll();<br>  }<br>}</div>
     </section>
 
     <!-- Section Divider -->
@@ -121,11 +120,11 @@
             <h2 class="section-title" data-aos="fade-up">About Me</h2>
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right" data-aos-delay="100">
-                    <h3 class="flip-in">Software Developer (Full Stack)</h3>
+                    <h3 class="flip-in">Java Backend Developer</h3>
                     <p>
-                        With 2 years of experience building scalable web applications in JavaScript, Java, Python, and PHP ecosystems. 
-                        I have strong problem-solving skills with expertise in Data Structures Algorithms, RESTful APIs, and cloud deployment (Azure). 
-                        I'm passionate about creating efficient, maintainable solutions that solve real-world problems.
+                        With 2.5 years of experience building robust backend systems and enterprise applications using Java ecosystem. 
+                        I specialize in Spring Boot, Microservices architecture, RESTful APIs, and cloud deployment (Azure). 
+                        I'm passionate about creating scalable, maintainable backend solutions that power modern applications.
                     </p>
                     <div class="skills">
                         <h4 class="flip-in">Technical Skills</h4>
@@ -133,41 +132,52 @@
                         <div class="skill-category">
                             <h5><i class="fas fa-code"></i> Languages</h5>
                             <div class="skill-tags">
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="100">JavaScript</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="150">Python</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="200">PHP</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="250">Java</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="100">Java</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="150">SQL</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="200">XML</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="250">JSON</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="300">JavaScript</div>
                             </div>
                         </div>
                         
                         <div class="skill-category">
-                            <h5><i class="fas fa-laptop-code"></i> Frontend</h5>
+                            <h5><i class="fas fa-cogs"></i> Java Frameworks</h5>
                             <div class="skill-tags">
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="300">React.js</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="350">Next.js</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="400">HTML5/CSS3</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="450">Bootstrap</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="300">Spring Boot</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="350">Spring MVC</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="400">Spring Security</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="450">Spring Data JPA</div>
                             </div>
                         </div>
                         
                         <div class="skill-category">
-                            <h5><i class="fas fa-server"></i> Backend</h5>
+                            <h5><i class="fas fa-server"></i> Backend Technologies</h5>
                             <div class="skill-tags">
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="500">Node.js</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="550">Express.js</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="600">Django</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="650">Laravel</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="500">REST APIs</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="550">Microservices</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="600">JPA/Hibernate</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="650">Maven</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h5><i class="fas fa-project-diagram"></i> System Design</h5>
+                            <div class="skill-tags">
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="680">Scalability</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="700">Distributed Systems</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="720">High Availability</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="740">Caching</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="760">Message Queues</div>
                             </div>
                         </div>
                         
                         <div class="skill-category">
                             <h5><i class="fas fa-database"></i> Databases</h5>
                             <div class="skill-tags">
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="700">MongoDB</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="750">MySQL</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="800">PostgreSQL</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="850">Firebase</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="900">Redis</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="700">MySQL</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="750">PostgreSQL</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="800">Oracle</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="850">Redis</div>
                             </div>
                         </div>
                         
@@ -177,8 +187,8 @@
                                 <div class="skill-tag" data-aos="zoom-in" data-aos-delay="950">Git</div>
                                 <div class="skill-tag" data-aos="zoom-in" data-aos-delay="1000">Azure</div>
                                 <div class="skill-tag" data-aos="zoom-in" data-aos-delay="1050">Docker</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="1100">REST APIs</div>
-                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="1150">Microservices</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="1100">Jenkins</div>
+                                <div class="skill-tag" data-aos="zoom-in" data-aos-delay="1150">IntelliJ IDEA</div>
                             </div>
                         </div>
 
@@ -186,43 +196,49 @@
                             <h5><i class="fas fa-chart-bar"></i> Core Expertise</h5>
                             <div class="skill-progress">
                                 <div class="progress-item">
-                                    <div class="progress-label" data-percent="95%">JavaScript</div>
+                                    <div class="progress-label" data-percent="95%">Java</div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 95%;" data-aos="slide-right" data-aos-delay="100"></div>
                                     </div>
                                 </div>
                                 <div class="progress-item">
-                                    <div class="progress-label" data-percent="90%">React.js</div>
+                                    <div class="progress-label" data-percent="90%">Spring Boot</div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 90%;" data-aos="slide-right" data-aos-delay="200"></div>
                                     </div>
                                 </div>
                                 <div class="progress-item">
-                                    <div class="progress-label" data-percent="85%">Node.js</div>
+                                    <div class="progress-label" data-percent="85%">REST APIs</div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 85%;" data-aos="slide-right" data-aos-delay="300"></div>
                                     </div>
                                 </div>
                                 <div class="progress-item">
-                                    <div class="progress-label" data-percent="80%">MongoDB</div>
+                                    <div class="progress-label" data-percent="80%">JavaScript</div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%;" data-aos="slide-right" data-aos-delay="350"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item">
+                                    <div class="progress-label" data-percent="80%">MySQL</div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 80%;" data-aos="slide-right" data-aos-delay="400"></div>
                                     </div>
                                 </div>
                                 <div class="progress-item">
-                                    <div class="progress-label" data-percent="78%">Python</div>
+                                    <div class="progress-label" data-percent="78%">Microservices</div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 78%;" data-aos="slide-right" data-aos-delay="500"></div>
                                     </div>
                                 </div>
                                 <div class="progress-item">
-                                    <div class="progress-label" data-percent="75%">PHP</div>
+                                    <div class="progress-label" data-percent="75%">Maven</div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 75%;" data-aos="slide-right" data-aos-delay="600"></div>
                                     </div>
                                 </div>
                                 <div class="progress-item">
-                                    <div class="progress-label" data-percent="82%">Java</div>
+                                    <div class="progress-label" data-percent="82%">JPA/Hibernate</div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 82%;" data-aos="slide-right" data-aos-delay="700"></div>
                                     </div>
@@ -247,25 +263,24 @@
                         </div>
                         <div class="profile-content">
                             <h3 class="profile-name">Sahilkumar Prasad</h3>
-                            <p class="profile-title">Software Developer (Full Stack)</p>
+                            <p class="profile-title">Java Backend Developer</p>
                             <p class="profile-location"><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
                             <div class="profile-details">
                                 <p><i class="fas fa-building"></i> Crescent Engineering and Consulting</p>
                                 <p><i class="fas fa-university"></i> University of Mumbai</p>
                                 <p><i class="fas fa-laptop-code"></i> <a href="https://leetcode.com/u/Sahill1001/" target="_blank">LeetCode</a> | <a href="https://www.hackerrank.com/profile/prasadsahil06" target="_blank">HackerRank</a></p>
-                                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/sahill_1001" target="_blank">Instagram</a></p>
                             </div>
                             <div class="profile-repos">
                                 <h4>Featured Projects</h4>
                                 <div class="repo-list">
-                                    <a href="https://github.com/Sahill1001/citrawarta" class="repo-item" target="_blank">
-                                        <i class="fas fa-film"></i> Citrawārtā - YouTube & Twitter Hybrid
+                                    <a href="#" class="repo-item" target="_blank">
+                                        <i class="fas fa-cogs"></i> Enterprise Management System (Spring Boot)
                                     </a>
-                                    <a href="https://github.com/Sahill1001/E-Vegetables-" class="repo-item" target="_blank">
-                                        <i class="fas fa-shopping-basket"></i> E-Vegetables - Online Grocery
+                                    <a href="#" class="repo-item" target="_blank">
+                                        <i class="fas fa-server"></i> E-Commerce Backend API (Spring Boot)
                                     </a>
-                                    <a href="https://github.com/Sahill1001/Let-s-chat" class="repo-item" target="_blank">
-                                        <i class="fas fa-comments"></i> Let's Chat
+                                    <a href="#" class="repo-item" target="_blank">
+                                        <i class="fas fa-database"></i> Banking System Backend (Java/Spring Security)
                                     </a>
                                 </div>
                             </div>
@@ -293,15 +308,15 @@
                 <div class="timeline-item" data-aos="flip-up" data-aos-delay="100">
                     <div class="timeline-content">
                         <div class="timeline-date">May 2023 - Present</div>
-                        <h3 class="timeline-title">Software Developer</h3>
+                        <h3 class="timeline-title">Java Backend Developer</h3>
                         <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> Crescent Engineering and Consulting, Vashi, New Mumbai</div>
                         <div class="timeline-description">
                             <ul>
-                                <li>Developed 3+ web applications using MERN stack, improving business processes by 30%</li>
-                                <li>Implemented RESTful APIs with Node.js/Express, reducing response time by 40%</li>
-                                <li>Designed responsive UIs with React.js and Bootstrap, increasing user engagement by 25%</li>
-                                <li>Deployed applications on Azure, optimizing cloud resource usage by 20%</li>
-                                <li>Conducted code reviews, reducing bugs in production by 35%</li>
+                                <li>Developed 5+ enterprise backend applications using Spring Boot and Java, improving system performance by 40%</li>
+                                <li>Implemented RESTful APIs and Microservices architecture, reducing response time by 45%</li>
+                                <li>Designed database schemas and optimized SQL queries, improving data retrieval speed by 50%</li>
+                                <li>Deployed applications on Azure cloud platform, optimizing resource usage by 25%</li>
+                                <li>Conducted code reviews and implemented best practices, reducing production bugs by 40%</li>
                             </ul>
                         </div>
                     </div>
@@ -322,20 +337,20 @@
                 <!-- Project 1 -->
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-img">
-                        <i class="fas fa-boxes-stacked floating"></i>
+                        <i class="fas fa-cogs floating"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title flip-in">Invinity - ERP System</h3>
+                        <h3 class="project-title flip-in">Enterprise Management System</h3>
                         <div class="project-tags">
-                            <div class="project-tag">PHP</div>
-                            <div class="project-tag">MongoDB</div>
+                            <div class="project-tag">Spring Boot</div>
+                            <div class="project-tag">MySQL</div>
                             <div class="project-tag">Azure</div>
                         </div>
                         <div class="project-description">
                             <ul>
-                                <li>Created inventory and financial management modules</li>
-                                <li>Integrated analytics dashboard for business intelligence</li>
-                                <li>Automated order processing workflows</li>
+                                <li>Built comprehensive enterprise backend system with Spring Boot and REST APIs</li>
+                                <li>Implemented JPA/Hibernate for database operations and entity management</li>
+                                <li>Designed microservices architecture for scalable business operations</li>
                             </ul>
                         </div>
                         <a href="#" class="project-link bounce-in">View Project <i class="fas fa-arrow-right"></i></a>
@@ -345,22 +360,22 @@
                 <!-- Project 2 -->
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-img">
-                        <i class="fas fa-film floating"></i>
+                        <i class="fas fa-server floating"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title flip-in">Citrawārtā - YouTube & Twitter Hybrid</h3>
+                        <h3 class="project-title flip-in">E-Commerce Backend API</h3>
                         <div class="project-tags">
-                            <div class="project-tag">React.js</div>
-                            <div class="project-tag">Express.js</div>
-                            <div class="project-tag">MongoDB</div>
-                            <div class="project-tag">Node.js</div>
+                            <div class="project-tag">Spring Boot</div>
+                            <div class="project-tag">PostgreSQL</div>
+                            <div class="project-tag">Redis</div>
+                            <div class="project-tag">Docker</div>
                         </div>
                         <div class="project-description">
                             <ul>
-                                <li>Created a unique hybrid platform combining YouTube's video capabilities with Twitter's microblogging</li>
-                                <li>Developed video streaming functionality similar to YouTube with enhanced social sharing</li>
-                                <li>Implemented Twitter-like short-form content posting with multimedia support</li>
-                                <li>Built engagement features including comments, likes, shares, and trending topics</li>
+                                <li>Developed scalable e-commerce backend API using Spring Boot and microservices</li>
+                                <li>Implemented Redis caching for improved performance and session management</li>
+                                <li>Built RESTful APIs for product catalog, user management, and order processing</li>
+                                <li>Containerized application using Docker for easy deployment and scaling</li>
                             </ul>
                         </div>
                         <a href="https://github.com/Sahill1001/citrawarta" class="project-link bounce-in">View Project <i class="fas fa-arrow-right"></i></a>
@@ -370,22 +385,22 @@
                 <!-- Project 3 -->
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-img">
-                        <i class="fas fa-shopping-basket floating"></i>
+                        <i class="fas fa-database floating"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title flip-in">E-Vegetables - Online Grocery Platform</h3>
+                        <h3 class="project-title flip-in">Banking System Backend</h3>
                         <div class="project-tags">
-                            <div class="project-tag">Django</div>
-                            <div class="project-tag">Python</div>
-                            <div class="project-tag">HTML</div>
-                            <div class="project-tag">CSS</div>
+                            <div class="project-tag">Java</div>
+                            <div class="project-tag">Spring Security</div>
+                            <div class="project-tag">Oracle</div>
+                            <div class="project-tag">JWT</div>
                         </div>
                         <div class="project-description">
                             <ul>
-                                <li>Built comprehensive e-commerce platform for vegetable shopping with dual interfaces</li>
-                                <li>Implemented customer features including product browsing, cart management, and order tracking</li>
-                                <li>Created vendor dashboard for product management and order processing</li>
-                                <li>Developed notification system for order status updates and user communications</li>
+                                <li>Built secure banking backend system with Spring Security and JWT authentication</li>
+                                <li>Implemented transaction processing APIs with proper validation and error handling</li>
+                                <li>Designed database schema for account management and transaction history</li>
+                                <li>Developed REST APIs for account operations, transfers, and balance inquiries</li>
                             </ul>
                         </div>
                         <a href="https://github.com/Sahill1001/E-Vegetables-" class="project-link bounce-in">View Project <i class="fas fa-arrow-right"></i></a>
@@ -437,7 +452,7 @@
                         <i class="fas fa-database"></i>
                     </div>
                     <div class="achievement-text flip-in">
-                        Optimized database queries reducing API response time by 40% in production
+                        Optimized database queries and implemented caching reducing API response time by 50% in production
                     </div>
                 </div>
                 <div class="achievement-item" data-aos="fade-up" data-aos-delay="200">
@@ -445,15 +460,15 @@
                         <i class="fas fa-server"></i>
                     </div>
                     <div class="achievement-text flip-in">
-                        Implemented caching strategy that improved application performance by 60%
+                        Implemented microservices architecture that improved application scalability by 60%
                     </div>
                 </div>
                 <div class="achievement-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="achievement-icon">
-                        <i class="fab fa-react"></i>
+                        <i class="fab fa-java"></i>
                     </div>
                     <div class="achievement-text flip-in">
-                        Developed reusable React components reducing development time by 30%
+                        Developed reusable Spring Boot components reducing development time by 35%
                     </div>
                 </div>
             </div>
@@ -498,13 +513,7 @@
                             <a href="https://github.com/Sahill1001" target="_blank">github.com/Sahill1001</a>
                         </div>
                     </div>
-                    <div class="contact-item bounce-in" data-aos="fade-right" data-aos-delay="500">
-                        <i class="fab fa-instagram"></i>
-                        <div class="contact-text">
-                            <h4>Instagram</h4>
-                            <a href="https://www.instagram.com/sahill_1001" target="_blank">instagram.com/sahill_1001</a>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="contact-form flip-in" data-aos="fade-left" data-aos-delay="100">
                     <form>
@@ -533,16 +542,15 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <h3>Sahilkumar Prasad</h3>
-                    <p>Building digital experiences that matter</p>
+                    <p>Building robust backend systems that power modern applications</p>
                 </div>
                 <div class="footer-social">
                     <a href="mailto:prasadsahil06@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/sahilkumar-prasad-74abba272/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/Sahill1001" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.instagram.com/sahill_1001" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="tel:+918451968851" title="Phone"><i class="fas fa-phone"></i></a>
                 </div>
-                <p class="copyright">&copy; 2023 Sahilkumar Prasad. All Rights Reserved.</p>
+                <p class="copyright">&copy; 2025 Sahilkumar Prasad. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
