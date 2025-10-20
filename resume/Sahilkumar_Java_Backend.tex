@@ -1,0 +1,139 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{0pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.98\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\begin{document}
+\begin{center}
+    \textbf{\Huge \scshape Sahilkumar Prasad} \\ \vspace{1pt}
+    \textbf{\Large Java Backend Developer} \\ \vspace{2pt}
+    \small +91-8451968851 $|$ \href{mailto:prasadsahil06@gmail.com}{\underline{prasadsahil06@gmail.com}} $|$
+    \href{https://www.linkedin.com/in/sahilkumar-prasad-74abba272/}{\underline{LinkedIn}} $|$
+    \href{https://github.com/sahill1001}{\underline{Github}}
+\end{center}
+
+%-----------Summary-----------
+\section{Summary}
+Java Backend Developer (2.5 years) building reliable, low-latency services with Java, Spring Boot, and Microservices on Azure. Strong in Data Structures \& Algorithms and System Design (HLD/LLD). Product mindset, clean architecture, performance, and resilience focused.
+
+%-----------Skills-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \item \textbf{Languages}: Java, JavaScript, SQL
+    \item \textbf{Backend}: Spring Boot, Spring MVC, Spring Security, JPA/Hibernate, Maven
+    \item \textbf{Databases}: MySQL, PostgreSQL, Oracle, Redis
+    \item \textbf{Cloud/DevOps}: Azure, Docker, Jenkins, Git, Linux, CI/CD
+    \item \textbf{System Design \& DSA}: REST APIs, Microservices, Distributed Systems, Caching, Messaging, HLD/LLD, Data Structures \& Algorithms
+ \end{itemize}
+
+%-----------Experience-----------
+\section{Professional Experience}
+  \begin{itemize}[leftmargin=0.15in]
+    \resumeSubheading
+      {Crescent Engineering and Consulting}{Vashi, New Mumbai}
+      {Java Backend Developer}{May 2023 -- Present}
+      \begin{itemize}
+        \resumeItem{Shipped 5+ backend services (Spring Boot, Java); improved system performance by ~40\% and lowered P95 latency.}
+        \resumeItem{Designed and implemented RESTful APIs and Microservices; reduced average response time by ~45\% via caching/IO tuning.}
+        \resumeItem{Modeled relational schemas and optimized SQL (indexes, query plans); cut DB P95 by ~50\%.}
+        \resumeItem{Owned Azure deployments with Docker and Jenkins pipelines; improved reliability and deployment lead time.}
+        \resumeItem{Raised code quality with reviews, tests, and observability; reduced production defects by ~40\%.}
+      \end{itemize}
+  \end{itemize}
+
+%-----------Projects-----------
+\section{Key Projects}
+  \begin{itemize}[leftmargin=0.15in]
+      \resumeProjectHeading
+        {Enterprise Management System}{Spring Boot, MySQL, Azure}
+        \begin{itemize}
+          \resumeItem{Built inventory/finance modules with REST APIs and layered architecture (Controller-Service-Repo).}
+          \resumeItem{Leveraged JPA/Hibernate; introduced caching (Redis) to reduce hot-path latency under load.}
+          \resumeItem{Enabled horizontal scaling with stateless services and DB connection pooling.}
+        \end{itemize}
+      \resumeProjectHeading
+        {E-Commerce Backend API}{Spring Boot, PostgreSQL, Redis, Docker}
+        \begin{itemize}
+          \resumeItem{Designed microservices (catalog, users, orders) with clear domain boundaries and contracts.}
+          \resumeItem{Added Redis caching and API rate limiting; improved throughput and stability during peak traffic.}
+          \resumeItem{Containerized and shipped with Docker; reduced deployment time and environment drift.}
+        \end{itemize}
+      \resumeProjectHeading
+        {Banking System Backend}{Java, Spring Security, Oracle, JWT}
+        \begin{itemize}
+          \resumeItem{Implemented JWT-based auth\,/\,authorization; added transaction APIs with idempotency and validation.}
+          \resumeItem{Modeled accounts\,/\,transactions ensuring ACID guarantees and consistent balances.}
+          \resumeItem{Improved auditability with structured logging\,/\,trace IDs and centralized error handling.}
+        \end{itemize}
+  \end{itemize}
+
+%-----------Education-----------
+\section{Education}
+  \begin{itemize}[leftmargin=0.15in]
+    \resumeSubheading
+      {University of Mumbai}{Mumbai, India}
+      {B.Sc Computer Science | CGPA: 9.57}{2020 -- 2023}
+  \end{itemize}
+
+%-----------Achievements-----------
+\section{Achievements}
+\begin{itemize}
+    \item Optimized database queries and added caching, reducing API response time by ~50\% in production.
+    \item Implemented microservices architecture that improved horizontal scalability and fault isolation.
+    \item Built reusable Spring Boot components and templates, reducing feature delivery time by ~35\%.
+\end{itemize}
+
+\end{document}
+
+
