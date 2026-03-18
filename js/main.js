@@ -23,10 +23,10 @@ window.addEventListener('load', function() {
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS
     AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: false, // Changed to false to allow animations to occur every time an element scrolls into view
-        mirror: true, // Changed to true to trigger animations when scrolling back up
+        duration: 650,
+        easing: 'ease-out-cubic',
+        once: true,
+        mirror: false,
         anchorPlacement: 'center-bottom',
         disable: 'mobile' // Disable on mobile for better performance
     });
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const y = (window.innerHeight / 2 - e.pageY) / 25;
             
             if (window.innerWidth > 992) {
-                avatarContainer.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${y}deg) translateY(${Math.sin(Date.now() / 1000) * 10}px)`;
+                avatarContainer.style.transform = `perspective(1100px) rotateY(${x * 0.6}deg) rotateX(${y * 0.6}deg) translateY(${Math.sin(Date.now() / 1000) * 6}px)`;
             }
         });
     }
@@ -269,4 +269,180 @@ document.addEventListener('DOMContentLoaded', function() {
             observer.observe(divider);
         });
     }
+
+    // Case Study modal
+    const modal = document.getElementById('case-study-modal');
+    const overlay = document.getElementById('case-study-overlay');
+    const closeBtn = modal ? modal.querySelector('.modal-close') : null;
+    let lastFocusedElement = null;
+
+    const modalEls = modal ? {
+        title: document.getElementById('case-study-title'),
+        subtitle: document.getElementById('case-study-subtitle'),
+        results: document.getElementById('case-study-results'),
+        problem: document.getElementById('case-study-problem'),
+        solution: document.getElementById('case-study-solution'),
+        impact: document.getElementById('case-study-impact'),
+        tech: document.getElementById('case-study-tech'),
+        repo: document.getElementById('case-study-repo'),
+        contact: document.getElementById('case-study-contact')
+    } : null;
+
+    const caseStudies = {
+        erm: {
+            title: 'Enterprise Resource Management Platform',
+            subtitle: 'Inventory • Finance • HR modules on a scalable microservices foundation',
+            results: ['10K+ concurrent users', 'DB reads ↓ ~60%', 'Real-time updates via Kafka'],
+            problem: 'Teams needed a unified platform to manage core operations with high concurrency, strict reliability, and real-time updates across modules.',
+            solution: 'Built modular Spring Boot services with clean layered architecture, Redis caching, and Kafka event streaming. Optimized DB access with indexing, pooling, and connection management; deployed to Azure with autoscaling.',
+            impact: [
+                'Supported 10K+ concurrent users with predictable performance',
+                'Reduced DB read load by ~60% using TTL-based Redis caching',
+                'Cut data propagation lag from minutes to milliseconds using Kafka events'
+            ],
+            tech: ['Java 17', 'Spring Boot', 'JPA/Hibernate', 'Redis', 'Kafka', 'MySQL', 'Azure'],
+            repoUrl: 'https://github.com/Sahill1001'
+        },
+        ecom: {
+            title: 'E-Commerce Backend API',
+            subtitle: 'DDD microservices for Catalog, Cart, Orders, Payments, Notifications',
+            results: ['Sub-100ms listings', 'JWT + RBAC security', 'Zero-downtime releases'],
+            problem: 'Required an API-first backend with strong security and scaling, while keeping latency low under concurrent traffic and preventing payment duplication.',
+            solution: 'Designed microservice boundaries with DDD, implemented JWT + RBAC, rate limiting and idempotency keys. Added multi-level caching, pagination, and SQL tuning. Containerized services and automated CI/CD.',
+            impact: [
+                'Achieved sub-100ms product listing responses under 1K concurrent users',
+                'Hardened APIs with JWT, RBAC, rate limiting, and idempotent payments',
+                'Enabled zero-downtime releases via containerized CI/CD'
+            ],
+            tech: ['Spring Boot', 'PostgreSQL', 'Redis', 'Kafka', 'Docker', 'Kubernetes', 'GitHub Actions'],
+            repoUrl: 'https://github.com/Sahill1001/citrawarta'
+        },
+        bank: {
+            title: 'Banking System Backend',
+            subtitle: 'Secure transactions with RBAC, JWT, and concurrency controls',
+            results: ['85%+ test coverage', 'RBAC + JWT security', 'Concurrency-safe transfers'],
+            problem: 'Needed secure role-based APIs and consistent money movement under concurrent transfers, with robust test coverage to avoid regressions.',
+            solution: 'Implemented stateless auth with Spring Security + JWT and fine-grained RBAC. Added idempotency handling, pessimistic locking, and ACID-safe transaction flows. Wrote unit + integration tests with TDD mindset.',
+            impact: [
+                'Protected REST APIs with fine-grained role access controls',
+                'Prevented race conditions during transfers with locking + idempotency',
+                'Reached 85%+ test coverage to reduce regression risk'
+            ],
+            tech: ['Java', 'Spring Security', 'JWT', 'Oracle', 'JUnit 5', 'Mockito'],
+            repoUrl: 'https://github.com/Sahill1001/E-Vegetables-'
+        }
+    };
+
+    function setModalOpen(isOpen) {
+        if (!modal || !overlay) return;
+        modal.setAttribute('aria-hidden', String(!isOpen));
+        overlay.setAttribute('aria-hidden', String(!isOpen));
+        document.body.classList.toggle('modal-open', isOpen);
+    }
+
+    function getFocusableElements(container) {
+        if (!container) return [];
+        const selectors = [
+            'a[href]',
+            'button:not([disabled])',
+            'input:not([disabled])',
+            'select:not([disabled])',
+            'textarea:not([disabled])',
+            '[tabindex]:not([tabindex="-1"])'
+        ];
+        return Array.from(container.querySelectorAll(selectors.join(',')))
+            .filter(el => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length));
+    }
+
+    function renderCaseStudy(projectId) {
+        if (!modalEls) return;
+        const data = caseStudies[projectId];
+        if (!data) return;
+
+        modalEls.title.textContent = data.title;
+        modalEls.subtitle.textContent = data.subtitle || '';
+        modalEls.problem.textContent = data.problem || '';
+        modalEls.solution.textContent = data.solution || '';
+
+        if (modalEls.results) {
+            while (modalEls.results.firstChild) modalEls.results.removeChild(modalEls.results.firstChild);
+            (data.results || []).forEach(item => {
+                const chip = document.createElement('span');
+                chip.className = 'result-chip';
+                chip.textContent = item;
+                modalEls.results.appendChild(chip);
+            });
+        }
+
+        while (modalEls.impact.firstChild) modalEls.impact.removeChild(modalEls.impact.firstChild);
+        (data.impact || []).forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            modalEls.impact.appendChild(li);
+        });
+
+        while (modalEls.tech.firstChild) modalEls.tech.removeChild(modalEls.tech.firstChild);
+        (data.tech || []).forEach(tag => {
+            const el = document.createElement('span');
+            el.className = 'modal-tag';
+            el.textContent = tag;
+            modalEls.tech.appendChild(el);
+        });
+
+        modalEls.repo.href = data.repoUrl || '#';
+    }
+
+    function openCaseStudy(projectId, triggerEl) {
+        lastFocusedElement = triggerEl || document.activeElement;
+        renderCaseStudy(projectId);
+        setModalOpen(true);
+        modal.dataset.trigger = triggerEl ? '1' : '0';
+        setTimeout(() => {
+            (closeBtn || modal).focus?.();
+        }, 0);
+    }
+
+    function closeCaseStudy() {
+        setModalOpen(false);
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+            setTimeout(() => lastFocusedElement.focus(), 0);
+        }
+    }
+
+    document.querySelectorAll('.project-card .case-study-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const card = e.currentTarget.closest('.project-card');
+            const id = card ? card.getAttribute('data-project') : null;
+            if (id) openCaseStudy(id, e.currentTarget);
+        });
+    });
+
+    if (overlay) overlay.addEventListener('click', closeCaseStudy);
+    if (closeBtn) closeBtn.addEventListener('click', closeCaseStudy);
+    document.addEventListener('keydown', (e) => {
+        if (!modal || modal.getAttribute('aria-hidden') === 'true') return;
+        if (e.key === 'Escape') {
+            closeCaseStudy();
+            return;
+        }
+        if (e.key === 'Tab') {
+            const focusables = getFocusableElements(modal);
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            const active = document.activeElement;
+
+            if (e.shiftKey) {
+                if (active === first || !modal.contains(active)) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else {
+                if (active === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        }
+    });
 }); 
