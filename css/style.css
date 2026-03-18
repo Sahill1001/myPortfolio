@@ -1967,6 +1967,18 @@ footer::after {
 
     .contact-content {
         flex-direction: column;
+        gap: 24px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .contact-form {
+        padding: 24px;
     }
 
     section {
@@ -2029,6 +2041,70 @@ footer::after {
     .skill-category {
         padding: 15px;
     }
+
+    .contact {
+        padding: 80px 0;
+    }
+
+    .contact .container {
+        padding: 0 16px;
+    }
+
+    .contact-content {
+        gap: 18px;
+    }
+
+    .contact-form {
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .contact-item {
+        margin-bottom: 14px;
+        padding: 14px;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .contact-item i {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .contact-text h4 {
+        font-size: 1rem;
+    }
+
+    .contact-text a {
+        font-size: 0.95rem;
+        word-break: break-word;
+    }
+
+    .form-group {
+        margin-bottom: 14px;
+    }
+
+    .form-control {
+        font-size: 16px;
+        padding: 12px 14px;
+    }
+
+    textarea.form-control {
+        height: 120px;
+        min-height: 120px;
+    }
+
+    .form-group .btn {
+        width: 100%;
+        min-height: 42px;
+    }
+
+
+    .contact-form:hover,
+    .contact-item:hover {
+        transform: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2047,6 +2123,18 @@ footer::after {
     
     .project-card {
         width: 100%;
+    }
+
+    .contact .container {
+        padding: 0 12px;
+    }
+
+    .contact-content {
+        gap: 14px;
+    }
+
+    .contact-form {
+        padding: 14px;
     }
 }
 
@@ -2855,7 +2943,7 @@ header.scrolled {
     flex: 1;
     background: rgba(var(--card-bg-rgb), 0.85);
     backdrop-filter: blur(3px);
-    padding: 40px;
+    padding: 24px;
     border-radius: var(--border-radius);
     box-shadow: 0 10px 30px var(--shadow-color);
     transition: all 0.3s ease;
@@ -2873,7 +2961,7 @@ header.scrolled {
     margin-bottom: 30px;
     background: rgba(var(--card-bg-rgb), 0.85);
     backdrop-filter: blur(3px);
-    padding: 20px;
+    padding: 14px;
     border-radius: var(--border-radius);
     box-shadow: 0 5px 20px var(--shadow-color);
     transition: all 0.3s ease;
@@ -2926,7 +3014,7 @@ header.scrolled {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 
 .form-control {
@@ -2934,7 +3022,7 @@ header.scrolled {
     background-color: var(--card-bg);
     border: 2px solid transparent;
     border-radius: var(--border-radius);
-    padding: 15px;
+    padding: 12px;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     color: var(--text-color);
@@ -2952,7 +3040,7 @@ header.scrolled {
 }
 
 textarea.form-control {
-    height: 150px;
+    height: 120px;
     resize: vertical;
 }
 

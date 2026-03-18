@@ -289,47 +289,47 @@ document.addEventListener('DOMContentLoaded', function() {
     } : null;
 
     const caseStudies = {
-        erm: {
-            title: 'Enterprise Resource Management Platform',
-            subtitle: 'Inventory • Finance • HR modules on a scalable microservices foundation',
-            results: ['10K+ concurrent users', 'DB reads ↓ ~60%', 'Real-time updates via Kafka'],
-            problem: 'Teams needed a unified platform to manage core operations with high concurrency, strict reliability, and real-time updates across modules.',
-            solution: 'Built modular Spring Boot services with clean layered architecture, Redis caching, and Kafka event streaming. Optimized DB access with indexing, pooling, and connection management; deployed to Azure with autoscaling.',
+        notify: {
+            title: 'Distributed Notification System',
+            subtitle: 'Scalable email, SMS, and in-app notifications on event-driven architecture',
+            results: ['Reliable async consumers', 'Retry + DLQ handling', 'Redis-based rate limiting'],
+            problem: 'The platform needed reliable, scalable notifications across channels without failures causing user-facing issues or spam.',
+            solution: 'Implemented a Kafka-based event-driven workflow with asynchronous consumers, retry strategies, dead-letter queues, and Redis-based rate limiting.',
             impact: [
-                'Supported 10K+ concurrent users with predictable performance',
-                'Reduced DB read load by ~60% using TTL-based Redis caching',
-                'Cut data propagation lag from minutes to milliseconds using Kafka events'
+                'Enabled scalable multi-channel notifications (email, SMS, in-app)',
+                'Improved delivery reliability with retry and dead-letter queue mechanisms',
+                'Prevented notification spam with Redis-based rate limiting'
             ],
-            tech: ['Java 17', 'Spring Boot', 'JPA/Hibernate', 'Redis', 'Kafka', 'MySQL', 'Azure'],
+            tech: ['Spring Boot', 'Kafka', 'Redis', 'Asynchronous Consumers', 'DLQ'],
             repoUrl: 'https://github.com/Sahill1001'
         },
-        ecom: {
-            title: 'E-Commerce Backend API',
-            subtitle: 'DDD microservices for Catalog, Cart, Orders, Payments, Notifications',
-            results: ['Sub-100ms listings', 'JWT + RBAC security', 'Zero-downtime releases'],
-            problem: 'Required an API-first backend with strong security and scaling, while keeping latency low under concurrent traffic and preventing payment duplication.',
-            solution: 'Designed microservice boundaries with DDD, implemented JWT + RBAC, rate limiting and idempotency keys. Added multi-level caching, pagination, and SQL tuning. Containerized services and automated CI/CD.',
+        rate: {
+            title: 'Distributed Rate Limiter',
+            subtitle: 'Token Bucket algorithm with Redis for cross-node consistency',
+            results: ['50K+ requests/min', 'Low latency overhead', 'Atomic Redis operations'],
+            problem: 'Needed an efficient distributed throttle to protect APIs under heavy load while keeping response latency low.',
+            solution: 'Built a Spring Boot and Redis rate limiter based on the Token Bucket algorithm, using atomic Redis operations for consistency across nodes.',
             impact: [
-                'Achieved sub-100ms product listing responses under 1K concurrent users',
-                'Hardened APIs with JWT, RBAC, rate limiting, and idempotent payments',
-                'Enabled zero-downtime releases via containerized CI/CD'
+                'Sustained throughput of 50K+ requests per minute',
+                'Maintained minimal latency overhead under load',
+                'Ensured cross-node correctness with atomic Redis operations'
             ],
-            tech: ['Spring Boot', 'PostgreSQL', 'Redis', 'Kafka', 'Docker', 'Kubernetes', 'GitHub Actions'],
-            repoUrl: 'https://github.com/Sahill1001/citrawarta'
+            tech: ['Spring Boot', 'Redis', 'Token Bucket', 'Distributed Systems'],
+            repoUrl: 'https://github.com/Sahill1001'
         },
-        bank: {
-            title: 'Banking System Backend',
-            subtitle: 'Secure transactions with RBAC, JWT, and concurrency controls',
-            results: ['85%+ test coverage', 'RBAC + JWT security', 'Concurrency-safe transfers'],
-            problem: 'Needed secure role-based APIs and consistent money movement under concurrent transfers, with robust test coverage to avoid regressions.',
-            solution: 'Implemented stateless auth with Spring Security + JWT and fine-grained RBAC. Added idempotency handling, pessimistic locking, and ACID-safe transaction flows. Wrote unit + integration tests with TDD mindset.',
+        shortener: {
+            title: 'Distributed URL Shortener',
+            subtitle: 'High-performance short-link service with caching and async analytics',
+            results: ['Read latency down by 80%', 'Kafka analytics pipeline', 'Fast cached lookups'],
+            problem: 'Required a low-latency short-link platform with high read performance and scalable click analytics processing.',
+            solution: 'Developed the service using Spring Boot, PostgreSQL, Redis, and Kafka. Added caching for hot links and asynchronous analytics processing.',
             impact: [
-                'Protected REST APIs with fine-grained role access controls',
-                'Prevented race conditions during transfers with locking + idempotency',
-                'Reached 85%+ test coverage to reduce regression risk'
+                'Reduced read latency by 80% with Redis caching',
+                'Handled analytics asynchronously through Kafka',
+                'Delivered high-performance URL redirection at scale'
             ],
-            tech: ['Java', 'Spring Security', 'JWT', 'Oracle', 'JUnit 5', 'Mockito'],
-            repoUrl: 'https://github.com/Sahill1001/E-Vegetables-'
+            tech: ['Spring Boot', 'PostgreSQL', 'Redis', 'Kafka'],
+            repoUrl: 'https://github.com/Sahill1001'
         }
     };
 
