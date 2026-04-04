@@ -289,6 +289,20 @@ document.addEventListener('DOMContentLoaded', function() {
     } : null;
 
     const caseStudies = {
+        tally: {
+            title: 'Tally Integration Plugin',
+            subtitle: 'Production integration between SaaS Billing and Tally Prime via XML/HTTP API',
+            results: ['Bi-directional sync', 'Retry + conflict handling', 'Adopted by real clients'],
+            problem: 'Clients needed accounting data synced between the ERP Billing module and Tally Prime without manual entry or reconciliation delays.',
+            solution: 'Designed and delivered a production integration plugin that syncs invoices, payments, and ledgers using Tally XML/HTTP APIs with retry logic, conflict resolution, and robust error recovery.',
+            impact: [
+                'Eliminated major manual accounting data entry for client teams',
+                'Improved cross-system consistency with reliable retries and conflict handling',
+                'Contributed directly to production adoption of the platform'
+            ],
+            tech: ['Spring Boot', 'Tally Prime XML/HTTP API', 'Retry Logic', 'Error Recovery'],
+            repoUrl: 'https://github.com/Sahill1001'
+        },
         notify: {
             title: 'Distributed Notification System',
             subtitle: 'Scalable email, SMS, and in-app notifications on event-driven architecture',
@@ -301,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Prevented notification spam with Redis-based rate limiting'
             ],
             tech: ['Spring Boot', 'Kafka', 'Redis', 'Asynchronous Consumers', 'DLQ'],
-            repoUrl: 'https://github.com/Sahill1001'
+            repoUrl: 'https://github.com/Sahill1001/notification-system'
         },
         rate: {
             title: 'Distributed Rate Limiter',
@@ -315,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Ensured cross-node correctness with atomic Redis operations'
             ],
             tech: ['Spring Boot', 'Redis', 'Token Bucket', 'Distributed Systems'],
-            repoUrl: 'https://github.com/Sahill1001'
+            repoUrl: 'https://github.com/Sahill1001/rate-limiter'
         },
         shortener: {
             title: 'Distributed URL Shortener',
@@ -329,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Delivered high-performance URL redirection at scale'
             ],
             tech: ['Spring Boot', 'PostgreSQL', 'Redis', 'Kafka'],
-            repoUrl: 'https://github.com/Sahill1001'
+            repoUrl: 'https://github.com/Sahill1001/url-shortener'
         }
     };
 
