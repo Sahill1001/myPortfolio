@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"d:\\\\Programming Notes\\\\myPortfolio\" -Recurse)",
+      "Bash(Select-Object FullName)",
+      "WebFetch(domain:www.manishaenterprise.in)"
+    ]
+  }
+}

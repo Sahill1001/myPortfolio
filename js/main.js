@@ -344,6 +344,21 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             tech: ['Spring Boot', 'PostgreSQL', 'Redis', 'Kafka'],
             repoUrl: 'https://github.com/Sahill1001/url-shortener'
+        },
+        manisha: {
+            title: 'Manisha Enterprise Website',
+            subtitle: 'Production business website for a Mumbai-based fabrication and interior solutions company',
+            results: ['Live in production', '500+ client base', 'Lead gen via WhatsApp'],
+            problem: 'Manisha Enterprises — a 15-year-old fabrication company with 50+ craftsmen and 500+ clients — had no online presence and relied entirely on word-of-mouth for client acquisition.',
+            solution: 'Built a full-stack web application with a Spring Boot REST API backend and Next.js frontend, showcasing nine service categories, a project gallery, video demonstrations, client testimonials, and WhatsApp-integrated contact forms for real-time lead generation.',
+            impact: [
+                'Delivered 24/7 digital presence for all nine service offerings across Maharashtra',
+                'Enabled direct client enquiries via WhatsApp integration and contact forms',
+                'Showcased real project gallery and testimonials to build credibility with new clients'
+            ],
+            tech: ['Spring Boot', 'Next.js', 'REST APIs', 'HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+            repoUrl: 'https://www.manishaenterprise.in/',
+            repoLabel: 'live'
         }
     };
 
@@ -404,6 +419,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         modalEls.repo.href = data.repoUrl || '#';
+        if (modalEls.repo.querySelector('i')) {
+            const icon = modalEls.repo.querySelector('i');
+            if (data.repoLabel === 'live') {
+                icon.className = 'fas fa-external-link-alt';
+                modalEls.repo.childNodes[modalEls.repo.childNodes.length - 1].textContent = ' Live Site';
+            } else {
+                icon.className = 'fab fa-github';
+                modalEls.repo.childNodes[modalEls.repo.childNodes.length - 1].textContent = ' Repository';
+            }
+        }
     }
 
     function openCaseStudy(projectId, triggerEl) {
