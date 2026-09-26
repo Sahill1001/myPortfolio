@@ -289,78 +289,122 @@ document.addEventListener('DOMContentLoaded', function() {
     } : null;
 
     const caseStudies = {
-        tally: {
-            title: 'Tally Integration Plugin',
-            subtitle: 'Production integration between SaaS Billing and Tally Prime via XML/HTTP API',
-            results: ['Bi-directional sync', 'Retry + conflict handling', 'Adopted by real clients'],
-            problem: 'Clients needed accounting data synced between the ERP Billing module and Tally Prime without manual entry or reconciliation delays.',
-            solution: 'Designed and delivered a production integration plugin that syncs invoices, payments, and ledgers using Tally XML/HTTP APIs with retry logic, conflict resolution, and robust error recovery.',
-            impact: [
-                'Eliminated major manual accounting data entry for client teams',
-                'Improved cross-system consistency with reliable retries and conflict handling',
-                'Contributed directly to production adoption of the platform'
-            ],
-            tech: ['Spring Boot', 'Tally Prime XML/HTTP API', 'Retry Logic', 'Error Recovery'],
-            repoUrl: 'https://github.com/Sahill1001'
-        },
-        notify: {
-            title: 'Distributed Notification System',
-            subtitle: 'Scalable email, SMS, and in-app notifications on event-driven architecture',
-            results: ['Reliable async consumers', 'Retry + DLQ handling', 'Redis-based rate limiting'],
-            problem: 'The platform needed reliable, scalable notifications across channels without failures causing user-facing issues or spam.',
-            solution: 'Implemented a Kafka-based event-driven workflow with asynchronous consumers, retry strategies, dead-letter queues, and Redis-based rate limiting.',
-            impact: [
-                'Enabled scalable multi-channel notifications (email, SMS, in-app)',
-                'Improved delivery reliability with retry and dead-letter queue mechanisms',
-                'Prevented notification spam with Redis-based rate limiting'
-            ],
-            tech: ['Spring Boot', 'Kafka', 'Redis', 'Asynchronous Consumers', 'DLQ'],
-            repoUrl: 'https://github.com/Sahill1001/notification-system'
-        },
-        rate: {
-            title: 'Distributed Rate Limiter',
-            subtitle: 'Token Bucket algorithm with Redis for cross-node consistency',
-            results: ['50K+ requests/min', 'Low latency overhead', 'Atomic Redis operations'],
-            problem: 'Needed an efficient distributed throttle to protect APIs under heavy load while keeping response latency low.',
-            solution: 'Built a Spring Boot and Redis rate limiter based on the Token Bucket algorithm, using atomic Redis operations for consistency across nodes.',
-            impact: [
-                'Sustained throughput of 50K+ requests per minute',
-                'Maintained minimal latency overhead under load',
-                'Ensured cross-node correctness with atomic Redis operations'
-            ],
-            tech: ['Spring Boot', 'Redis', 'Token Bucket', 'Distributed Systems'],
-            repoUrl: 'https://github.com/Sahill1001/rate-limiter'
-        },
-        shortener: {
-            title: 'Distributed URL Shortener',
-            subtitle: 'High-performance short-link service with caching and async analytics',
-            results: ['Read latency down by 80%', 'Kafka analytics pipeline', 'Fast cached lookups'],
-            problem: 'Required a low-latency short-link platform with high read performance and scalable click analytics processing.',
-            solution: 'Developed the service using Spring Boot, PostgreSQL, Redis, and Kafka. Added caching for hot links and asynchronous analytics processing.',
-            impact: [
-                'Reduced read latency by 80% with Redis caching',
-                'Handled analytics asynchronously through Kafka',
-                'Delivered high-performance URL redirection at scale'
-            ],
-            tech: ['Spring Boot', 'PostgreSQL', 'Redis', 'Kafka'],
-            repoUrl: 'https://github.com/Sahill1001/url-shortener'
-        },
-        manisha: {
-            title: 'Manisha Enterprise Website',
-            subtitle: 'Production business website for a Mumbai-based fabrication and interior solutions company',
-            results: ['Live in production', '500+ client base', 'Lead gen via WhatsApp'],
-            problem: 'Manisha Enterprises — a 15-year-old fabrication company with 50+ craftsmen and 500+ clients — had no online presence and relied entirely on word-of-mouth for client acquisition.',
-            solution: 'Built a full-stack web application with a Spring Boot REST API backend and Next.js frontend, showcasing nine service categories, a project gallery, video demonstrations, client testimonials, and WhatsApp-integrated contact forms for real-time lead generation.',
-            impact: [
-                'Delivered 24/7 digital presence for all nine service offerings across Maharashtra',
-                'Enabled direct client enquiries via WhatsApp integration and contact forms',
-                'Showcased real project gallery and testimonials to build credibility with new clients'
-            ],
-            tech: ['Spring Boot', 'Next.js', 'REST APIs', 'HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
-            repoUrl: 'https://www.manishaenterprise.in/',
-            repoLabel: 'live'
-        }
-    };
+    "tally": {
+        "title": "ERP-to-Tally Integration",
+        "subtitle": "Professional work: Java/Spring Boot accounting bridge",
+        "results": [
+            "Accounting validation",
+            "Duplicate-request checks",
+            "Finance review"
+        ],
+        "problem": "ERP billing entries need to be translated and checked before they are posted to Tally.",
+        "solution": "Built a Java/Spring Boot bridge that maps ERP billing to accounting entries and Tally XML/HTTP requests.",
+        "impact": [
+            "Validated debit/credit balance before posting.",
+            "Added duplicate-request checks and a finance review step.",
+            "Diagnosed API and synchronization failures."
+        ],
+        "tech": [
+            "Java",
+            "Spring Boot",
+            "Tally XML/HTTP"
+        ],
+        "repoUrl": "https://github.com/Sahill1001"
+    },
+    "rate": {
+        "title": "Redis Rate Limiter",
+        "subtitle": "Personal Java project: token-bucket request throttling",
+        "results": [
+            "Redis Lua script",
+            "HTTP 429 response",
+            "Configurable token bucket"
+        ],
+        "problem": "Practice enforcing a shared request limit without separate read-and-write races inside Redis.",
+        "solution": "Implemented a Spring Boot endpoint backed by a Redis Lua script that refills and consumes tokens atomically.",
+        "impact": [
+            "Returns HTTP 429 when a client exhausts its bucket.",
+            "Uses configurable capacity and refill settings.",
+            "Includes controller tests and opt-in real-Redis tests; no throughput benchmark is claimed."
+        ],
+        "tech": [
+            "Java",
+            "Spring Boot",
+            "Redis",
+            "Lua"
+        ],
+        "repoUrl": "https://github.com/Sahill1001/rate-limiter"
+    },
+    "notify": {
+        "title": "Notification System",
+        "subtitle": "Learning project: Kafka-based notification processing",
+        "results": [
+            "API and worker modules",
+            "Retry and DLQ flow",
+            "Completed-delivery checks"
+        ],
+        "problem": "Practice asynchronous processing and failure handling across separate API and worker modules.",
+        "solution": "Built a Kafka event flow with Redis-backed completion checks and rate limiting, provider routing, retries and a dead-letter topic.",
+        "impact": [
+            "Fixed failed sends being incorrectly skipped on retry.",
+            "Added regression tests for retries, redelivery and exhausted attempts.",
+            "Provider calls are simulated until endpoints are configured; exactly-once delivery is not guaranteed."
+        ],
+        "tech": [
+            "Java",
+            "Spring Boot",
+            "Kafka",
+            "Redis"
+        ],
+        "repoUrl": "https://github.com/Sahill1001/notification-system"
+    },
+    "shortener": {
+        "title": "URL Shortener",
+        "subtitle": "Personal Java project: redirects, caching and click events",
+        "results": [
+            "Custom short codes",
+            "Redis cache",
+            "Kafka click events"
+        ],
+        "problem": "Practice short-link creation, cached redirects and asynchronous click processing.",
+        "solution": "Built Spring Boot APIs using PostgreSQL persistence, Redis caching and Kafka click events.",
+        "impact": [
+            "Supports custom codes, expiration checks and deletion.",
+            "Added service tests for cache hits, missing/expired links, duplicate codes and rate-limit rejection.",
+            "No production traffic or measured latency reduction is claimed."
+        ],
+        "tech": [
+            "Java",
+            "Spring Boot",
+            "PostgreSQL",
+            "Redis",
+            "Kafka"
+        ],
+        "repoUrl": "https://github.com/Sahill1001/url-shortener"
+    },
+    "manisha": {
+        "title": "Manisha Enterprise Website",
+        "subtitle": "Business website for fabrication and interior services",
+        "results": [
+            "Service showcase",
+            "Project gallery",
+            "Contact links"
+        ],
+        "problem": "Present the business services and project work online.",
+        "solution": "Created a responsive website with service information, a project gallery and contact links.",
+        "impact": [
+            "Made services and project examples accessible online.",
+            "Provided a direct way for visitors to contact the business."
+        ],
+        "tech": [
+            "Responsive web design",
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "repoUrl": "https://www.manishaenterprise.in/",
+        "repoLabel": "live"
+    }
+};
 
     function setModalOpen(isOpen) {
         if (!modal || !overlay) return;

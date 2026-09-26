@@ -81,3 +81,7 @@ Then open: `http://localhost:5500`
 - Email: `prasadsahil06@gmail.com`
 - LinkedIn: `https://www.linkedin.com/in/sahilkumar-prasad-74abba272/`
 - GitHub: `https://github.com/Sahill1001`
+
+## Experience and project scope
+
+Current role: Software Development Engineer at Invinity India, June 2026–Present. Java is the primary language. Microservices architecture and system design fundamentals are currently learning topics. Personal Java projects are explicitly separated from professional work; unsupported benchmark figures have been removed. The downloadable PDF is the matching one-page resume.
