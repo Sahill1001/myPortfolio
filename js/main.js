@@ -382,24 +382,27 @@ document.addEventListener('DOMContentLoaded', function() {
         "repoUrl": "https://github.com/Sahill1001/url-shortener"
     },
     "manisha": {
-        "title": "Manisha Enterprise Website",
-        "subtitle": "Business website for fabrication and interior services",
+        "title": "Manisha Enterprises | Freelance Client",
+        "subtitle": "Java/Spring Boot and Next.js business website with an admin dashboard",
         "results": [
-            "Service showcase",
-            "Project gallery",
-            "Contact links"
+            "Live client website",
+            "Content management dashboard",
+            "Customer enquiry workflow"
         ],
-        "problem": "Present the business services and project work online.",
-        "solution": "Created a responsive website with service information, a project gallery and contact links.",
+        "problem": "Give a fabrication business a public website and a way to manage content and incoming enquiries.",
+        "solution": "Delivered a freelance application with Java 21/Spring Boot REST APIs, MongoDB persistence, JWT-based admin authentication, and Cloudinary uploads. Built the public website and admin dashboard with Next.js and TypeScript, including products, services, galleries, videos and customer enquiries.",
         "impact": [
-            "Made services and project examples accessible online.",
-            "Provided a direct way for visitors to contact the business."
+            "Published the client website at manishaenterprise.in.",
+            "Provided an admin interface to manage business content and review enquiries.",
+            "Connected enquiry forms to the backend and added WhatsApp contact links."
         ],
         "tech": [
-            "Responsive web design",
-            "HTML",
-            "CSS",
-            "JavaScript"
+            "Java 21",
+            "Spring Boot / Spring Security",
+            "MongoDB",
+            "Next.js / TypeScript",
+            "Tailwind CSS",
+            "Cloudinary"
         ],
         "repoUrl": "https://www.manishaenterprise.in/",
         "repoLabel": "live"
@@ -528,4 +531,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-}); 
+});
