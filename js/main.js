@@ -317,14 +317,14 @@ document.addEventListener('DOMContentLoaded', function() {
         "results": [
             "Redis Lua script",
             "HTTP 429 response",
-            "Configurable token bucket"
+            "9 tests passed in CI"
         ],
         "problem": "Practice enforcing a shared request limit without separate read-and-write races inside Redis.",
         "solution": "Implemented a Spring Boot endpoint backed by a Redis Lua script that refills and consumes tokens atomically.",
         "impact": [
             "Returns HTTP 429 when a client exhausts its bucket.",
             "Uses configurable capacity and refill settings.",
-            "Includes controller tests and opt-in real-Redis tests; no throughput benchmark is claimed."
+            "CI passed 4 controller tests and 5 real-Redis tests, including a concurrent token-consumption check."
         ],
         "tech": [
             "Java",
