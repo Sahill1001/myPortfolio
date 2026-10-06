@@ -46,7 +46,7 @@ myPortfolio/
 |-- images/
 |   `-- profile.jpg
 `-- resume/
-    `-- Sahilkumar_Prasad_Resume.pdf
+    `-- SAHILKUMAR_PRASAD_SDE_RESUME.pdf
 ```
 
 ## Run Locally
@@ -74,7 +74,7 @@ Then open: `http://localhost:5500`
 - Update styles in `css/style.css`
 - Update interactions/animations in `js/main.js`
 - Replace profile image in `images/profile.jpg`
-- Replace resume in `resume/Sahilkumar_Prasad_Resume.pdf`
+- Replace resume in `resume/SAHILKUMAR_PRASAD_SDE_RESUME.pdf`
 
 ## Contact
 
